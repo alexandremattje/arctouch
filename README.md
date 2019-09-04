@@ -1,2 +1,2 @@
-# arctouch
+# ArcTouch
 ArcTouch Code Challenge
