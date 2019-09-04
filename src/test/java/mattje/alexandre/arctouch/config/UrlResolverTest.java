@@ -1,6 +1,10 @@
 package mattje.alexandre.arctouch.config;
 
+import java.util.Collections;
+import java.util.Map;
+
 import org.assertj.core.api.Assertions;
+import org.assertj.core.api.Condition;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,17 +22,17 @@ public class UrlResolverTest {
 	private UrlResolver urlResolver;
 
 	@Test
-	public void testDiscoverMovies() {
-		MovieResponse response = movieModel.discoverMovies(1);
-		Assertions.assertThat(response.getPage()).isEqualTo(1);
-		Assertions.assertThat(response.getResults().size()).isGreaterThan(1);
+	public void testDefaultApiKeyParams() {
+		Map<String, Object> params = urlResolver.getDefaultApiKeyParams();
+
+		Assertions.assertThat(params.size()).isEqualTo(1);
+		Assertions.assertThat(params.keySet()).contains("aki_key");
 	}
 
 	@Test
 	public void testSearchMovies() {
-		MovieResponse response = movieModel.search("old", 1);
-		Assertions.assertThat(response.getPage()).isEqualTo(1);
-		Assertions.assertThat(response.getResults().size()).isGreaterThan(1);
+		String url = urlResolver.resolveUrlWithApiKey("/test", urlResolver.getDefaultApiKeyParams());
+		Assertions.assertThat(url).isEqualTo("https://api.themoviedb.org/3/test?api_key=1f54bd990f1cdfb230adb312546d765d");
 	}
 
 }
