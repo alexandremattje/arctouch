@@ -1,1 +1,0 @@
-curl -X POST https://generator3.swagger.io/ui/generate -H 'content-type: application/json' -d '{"specURL" : "https://api.stoplight.io/v1/versions/9WaNJfGpnnQ76opqe/export/oas.json", "lang" : "java", "codegenVersion" : "v3", "groupId" : "mattje.alexandre", "artifactId":"swagger-generated-client"}'
