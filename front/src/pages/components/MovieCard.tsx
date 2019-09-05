@@ -11,7 +11,6 @@ import Movie from '../../interfaces/Movie';
 
 const useStyles = makeStyles({
     card: {
-        maxWidth: 345,
         margin: 5
     },
     media: {
@@ -39,7 +38,13 @@ export default (props: MovieCardProps) => {
                         {props.movie.title}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        {props.movie.genre_ids}
+                        {props.movie.genre_ids.map((genre, idx) => {
+                            if (idx === 0) {
+                                return <span>{genre}</span>
+                            } else {
+                                return <span>{`, ${genre}`}</span>
+                            }
+                        })}
                     </Typography>
                 </CardContent>
             </CardActionArea>
