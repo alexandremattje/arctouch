@@ -39,7 +39,7 @@ export default (props: MovieCardProps) => {
                         {props.movie.title}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        {props.movie.genre}
+                        {props.movie.genre_ids}
                     </Typography>
                 </CardContent>
             </CardActionArea>
