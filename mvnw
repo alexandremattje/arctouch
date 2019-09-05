@@ -1,1 +1,1 @@
-mvn -Pprod -DskipTests clean dependency:list install
+mvn -P prod -B -DskipTests clean dependency:list install
