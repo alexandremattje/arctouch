@@ -18,11 +18,15 @@ export default () => {
                 console.log(json.results);
             });
         });
-    }, []);
+    }, [, query]);
+
+    const handleOnChangeSearch = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        setQuery(e.target.value);
+    }
 
     return (
         <div>
-            <TextField variant="outlined" label="Search value" />
+            <TextField variant="outlined" label="Search value" value={query} onChange={handleOnChangeSearch} />
             {movies.map(movie => (
                 <MovieCard movie={movie} />
             ))}
