@@ -12,7 +12,8 @@ import lombok.ToString;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-import mattje.alexandre.arctouch.common.converters.IntegerIdsToStringNames;
+import mattje.alexandre.arctouch.common.converters.DateToStringConverter;
+import mattje.alexandre.arctouch.common.converters.IntegerIdsToStringNamesConverter;
 
 @Builder
 @Data
@@ -32,9 +33,10 @@ public class Movie {
 	@JsonProperty("backdrop_path")
 	private String backdrop_path;
 	@JsonProperty("genre_ids")
-	@JsonDeserialize(converter = IntegerIdsToStringNames.class)
+	@JsonDeserialize(converter = IntegerIdsToStringNamesConverter.class)
 	private List<String> genres;
 	@JsonProperty("release_date")
-	private Date releaseDate;
+	@JsonDeserialize(converter = DateToStringConverter.class)
+	private String releaseDate;
 
 }

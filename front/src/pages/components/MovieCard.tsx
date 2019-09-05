@@ -38,13 +38,16 @@ export default (props: MovieCardProps) => {
                         {props.movie.title}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        {props.movie.genre_ids.map((genre, idx) => {
+                    <strong>Genres:</strong>{props.movie.genre_ids.map((genre, idx) => {
                             if (idx === 0) {
                                 return <span>{genre}</span>
                             } else {
                                 return <span>{`, ${genre}`}</span>
                             }
                         })}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        <strong>Release date:</strong>{props.movie.release_date}
                     </Typography>
                 </CardContent>
             </CardActionArea>
