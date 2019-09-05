@@ -30,7 +30,12 @@ export default () => {
 
     useEffect(() => {
         fetchMoreListItems();
-    }, [query, page]);
+    }, [page]);
+
+    useEffect(() => {
+        setPage(1);
+        fetchMoreListItems();
+    }, [query]);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -53,7 +58,7 @@ export default () => {
         fetch(`/movie/query?query=${query}&page=${page}`).then(res => {
             res.json().then(json => {
                 setPage(json.page);
-                setMovies(movies => movies.concat(json.results));
+                setMovies(page === 1 ? json.results : movies => movies.concat(json.results));
                 setIsFetching(false);
                 console.log(json.results);
             });
