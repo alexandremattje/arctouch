@@ -24,10 +24,10 @@ public class SearchMovieService {
 	@Autowired
 	private UrlResolver urlResolver;
 
-	public MovieResponse discoverMovies(int page) {
+	public MovieResponse upcomingMovies(int page) {
 		Map<String, Object> urlParams = urlResolver.getDefaultApiKeyParams();
 		urlParams.put("page", page);
-		String url = urlResolver.resolveUrlWithApiKey("/discover/movie", urlParams);
+		String url = urlResolver.resolveUrlWithApiKey("/movie/upcoming", urlParams);
 		return getMovieResponse(url, urlParams);
 	}
 

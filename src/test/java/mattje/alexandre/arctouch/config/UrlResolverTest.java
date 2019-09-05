@@ -26,13 +26,13 @@ public class UrlResolverTest {
 		Map<String, Object> params = urlResolver.getDefaultApiKeyParams();
 
 		Assertions.assertThat(params.size()).isEqualTo(1);
-		Assertions.assertThat(params.keySet()).contains("aki_key");
+		Assertions.assertThat(params.keySet()).contains("api_key");
 	}
 
 	@Test
 	public void testSearchMovies() {
 		String url = urlResolver.resolveUrlWithApiKey("/test", urlResolver.getDefaultApiKeyParams());
-		Assertions.assertThat(url).isEqualTo("https://api.themoviedb.org/3/test?api_key=1f54bd990f1cdfb230adb312546d765d");
+		Assertions.assertThat(url).isEqualTo("https://api.themoviedb.org/3/test?api_key={api_key}");
 	}
 
 }

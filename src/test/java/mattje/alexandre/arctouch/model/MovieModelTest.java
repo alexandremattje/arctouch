@@ -18,7 +18,7 @@ public class MovieModelTest {
 
 	@Test
 	public void testDiscoverMovies() {
-		MovieResponse response = movieModel.discoverMovies(1);
+		MovieResponse response = movieModel.upcomingMovies(1);
 		Assertions.assertThat(response.getPage()).isEqualTo(1);
 		Assertions.assertThat(response.getResults().size()).isGreaterThan(1);
 	}

@@ -22,8 +22,7 @@ public class MovieController {
 	public ResponseEntity<MovieResponse> queryMovies(@RequestParam String query, @RequestParam int page) {
 		MovieResponse response;
 		if (StringUtils.isEmpty(query)) {
-			response = movieModel.discoverMovies(page);
-
+			response = movieModel.upcomingMovies(page);
 		} else {
 			response = movieModel.search(query, page);
 		}
