@@ -2,9 +2,6 @@ package mattje.alexandre.arctouch.common;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,11 +10,9 @@ import lombok.ToString;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import mattje.alexandre.arctouch.common.converters.DateToStringConverter;
 import mattje.alexandre.arctouch.common.converters.GenresToStringNamesConverter;
-import mattje.alexandre.arctouch.common.converters.IntegerIdsToStringNamesConverter;
 
 @Builder
 @Data

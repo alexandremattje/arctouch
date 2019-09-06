@@ -13,7 +13,7 @@ import com.fasterxml.jackson.databind.util.Converter;
 
 import mattje.alexandre.arctouch.common.Genre;
 
-public class IntegerIdsToStringNamesConverter implements Converter<List<Integer>, String> {
+public class GenresIdsToStringNamesConverter implements Converter<List<Integer>, String> {
 
 	@Override
 	public String convert(List<Integer> integers) {

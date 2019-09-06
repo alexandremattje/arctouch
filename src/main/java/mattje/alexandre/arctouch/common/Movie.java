@@ -1,8 +1,5 @@
 package mattje.alexandre.arctouch.common;
 
-import java.util.Date;
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,7 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import mattje.alexandre.arctouch.common.converters.DateToStringConverter;
-import mattje.alexandre.arctouch.common.converters.IntegerIdsToStringNamesConverter;
+import mattje.alexandre.arctouch.common.converters.GenresIdsToStringNamesConverter;
 
 @Builder
 @Data
@@ -32,7 +29,7 @@ public class Movie {
 	@JsonProperty("backdrop_path")
 	private String backdropPath;
 	@JsonAlias({"genre_ids", "genres"})
-	@JsonDeserialize(converter = IntegerIdsToStringNamesConverter.class)
+	@JsonDeserialize(converter = GenresIdsToStringNamesConverter.class)
 	private String genres;
 	@JsonProperty("release_date")
 	@JsonDeserialize(converter = DateToStringConverter.class)
