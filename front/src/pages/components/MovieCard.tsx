@@ -51,10 +51,10 @@ const MovieCard = (props: MovieCardProps) => {
                         {props.movie.title}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        <strong>Genres:</strong>{props.movie.genres}
+                        <strong>Genres: </strong>{props.movie.genres}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        <strong>Release date:</strong>{props.movie.release_date}
+                        <strong>Release date: </strong>{props.movie.release_date}
                     </Typography>
                 </CardContent>
             </CardActionArea>

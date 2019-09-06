@@ -13,7 +13,6 @@ import com.fasterxml.jackson.databind.util.Converter;
 
 import mattje.alexandre.arctouch.common.Genre;
 
-@Component
 public class IntegerIdsToStringNamesConverter implements Converter<List<Integer>, String> {
 
 	@Override
