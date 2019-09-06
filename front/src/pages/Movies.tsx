@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
-import "./movies.css";
 import { MovieList } from "../interfaces/Movie";
 import MovieCard from "./components/MovieCard";
 import { Container, CircularProgress } from "@material-ui/core";
@@ -17,6 +16,10 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         progress: {
             margin: theme.spacing(2),
+        },
+        search: {
+            margin: theme.spacing(2),
+            width: "93%"
         },
     }),
 );
@@ -71,7 +74,7 @@ export default () => {
 
     return (
         <Container maxWidth="sm" >
-            <TextField variant="outlined" label="Search value" value={query} onChange={handleOnChangeSearch} fullWidth={true} />
+            <TextField className={classes.search} variant="outlined" label="Search value" value={query} onChange={handleOnChangeSearch} />
             {movies ? movies.map(movie => (
                 <MovieCard movie={movie} />
             )) : <></>}

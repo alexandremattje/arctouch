@@ -54,15 +54,19 @@ export default (props: MovieDetailProps) => {
         });
     }
 
+    const handleBackButtonClick = () => {
+        props.history.goBack();
+    }
+
     return (
         <>
             {movie ?
                 <>
-                    <Button size="small" color="primary">
-                        Detail
-                    </Button>
                     <div className={classes.root}>
                         <Paper className={classes.paper}>
+                            <Button size="small" color="primary" onClick={handleBackButtonClick}>
+                                Back
+                            </Button>                        
                             <Grid container spacing={2}>
                                 <Grid item>
                                     <CardMedia
@@ -78,13 +82,7 @@ export default (props: MovieDetailProps) => {
                                                 {movie.title}
                                             </Typography>
                                             <Typography variant="body2" gutterBottom>
-                                                <strong>Genres: </strong>{movie.genres.map((genre, idx) => {
-                                                    if (idx === 0) {
-                                                        return <span>{genre.name}</span>
-                                                    } else {
-                                                        return <span>{`, ${genre.name}`}</span>
-                                                    }
-                                                })}
+                                                <strong>Genres: </strong>{movie.genres}
                                             </Typography>
                                             <Typography variant="body2" component="p">
                                                 <strong>Overview: </strong>{movie.overview}

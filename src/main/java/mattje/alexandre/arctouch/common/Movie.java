@@ -3,6 +3,7 @@ package mattje.alexandre.arctouch.common;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,9 +31,9 @@ public class Movie {
 	private String posterPath;
 	@JsonProperty("backdrop_path")
 	private String backdropPath;
-	@JsonProperty("genre_ids")
+	@JsonAlias({"genre_ids", "genres"})
 	@JsonDeserialize(converter = IntegerIdsToStringNamesConverter.class)
-	private List<String> genres;
+	private String genres;
 	@JsonProperty("release_date")
 	@JsonDeserialize(converter = DateToStringConverter.class)
 	private String releaseDate;

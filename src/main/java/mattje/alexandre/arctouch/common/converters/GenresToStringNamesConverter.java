@@ -1,27 +1,25 @@
 package mattje.alexandre.arctouch.common.converters;
 
-import static mattje.alexandre.arctouch.config.AppProperties.genres;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.stereotype.Component;
-
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 import com.fasterxml.jackson.databind.util.Converter;
-
 import mattje.alexandre.arctouch.common.Genre;
+import mattje.alexandre.arctouch.common.MovieDetail;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+
+import static mattje.alexandre.arctouch.config.AppProperties.genres;
 
 @Component
-public class IntegerIdsToStringNamesConverter implements Converter<List<Integer>, String> {
+public class GenresToStringNamesConverter implements Converter<List<Genre>, String> {
 
 	@Override
-	public String convert(List<Integer> integers) {
+	public String convert(List<Genre> genres) {
 		StringBuilder builder = new StringBuilder();
 
-		integers.forEach(it -> {
-			int idx = genres.indexOf(Genre.builder().id(it).build());
+		genres.forEach(it -> {
+			int idx = genres.indexOf(Genre.builder().id(it.getId()).build());
 			if (idx != -1) {
 				if (builder.length() == 0) {
 					builder.append(genres.get(idx).getName());
