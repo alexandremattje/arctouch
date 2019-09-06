@@ -14,4 +14,5 @@ export interface MovieDetail {
     poster_path: String;
     backdrop_path: String;
     release_date: String;
+    overview: String;
 }
