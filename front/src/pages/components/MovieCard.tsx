@@ -15,7 +15,7 @@ const useStyles = makeStyles({
         margin: 5
     },
     media: {
-        height: 140,
+        height: 281,
     },
 });
 
@@ -44,7 +44,7 @@ const MovieCard = (props: MovieCardProps) => {
                 <CardMedia
                     className={classes.media}
                     image={`https://image.tmdb.org/t/p/w500/${props.movie.backdrop_path}`}
-                    title="Contemplative Reptile"
+                    title={`${props.movie.title}`}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
