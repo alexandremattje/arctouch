@@ -11,21 +11,21 @@ import mattje.alexandre.arctouch.common.MovieResponse;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MovieModelTest {
+public class SearchMovieServicelTest {
 
 	@Autowired
-	private SearchMovieService movieModel;
+	private SearchMovieService searchMovieService;
 
 	@Test
 	public void testDiscoverMovies() {
-		MovieResponse response = movieModel.upcomingMovies(1);
+		MovieResponse response = searchMovieService.upcomingMovies(1);
 		Assertions.assertThat(response.getPage()).isEqualTo(1);
 		Assertions.assertThat(response.getResults().size()).isGreaterThan(1);
 	}
 
 	@Test
 	public void testSearchMovies() {
-		MovieResponse response = movieModel.search("old", 1);
+		MovieResponse response = searchMovieService.search("old", 1);
 		Assertions.assertThat(response.getPage()).isEqualTo(1);
 		Assertions.assertThat(response.getResults().size()).isGreaterThan(1);
 	}

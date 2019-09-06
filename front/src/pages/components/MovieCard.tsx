@@ -7,7 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Movie from '../../interfaces/Movie';
+import { MovieList } from '../../interfaces/Movie';
+import { withRouter, RouteComponentProps } from 'react-router';
 
 const useStyles = makeStyles({
     card: {
@@ -18,16 +19,28 @@ const useStyles = makeStyles({
     },
 });
 
-interface MovieCardProps {
-    movie: Movie
+interface MovieCardProps extends RouteComponentProps {
+    movie: MovieList
 }
 
-export default (props: MovieCardProps) => {
+const MovieCard = (props: MovieCardProps) => {
     const classes = useStyles({});
+
+    const goToMovie = () => {
+        props.history.push(`/movie?id=${props.movie.id}`);
+    }
+
+    const handleCardActionClick = () => {
+        goToMovie()
+    }
+
+    const handleButtonDetailClick = () => {
+        goToMovie()
+    }
 
     return (
         <Card className={classes.card}>
-            <CardActionArea>
+            <CardActionArea onClick={handleCardActionClick}>
                 <CardMedia
                     className={classes.media}
                     image={`https://image.tmdb.org/t/p/w500/${props.movie.backdrop_path}`}
@@ -38,7 +51,7 @@ export default (props: MovieCardProps) => {
                         {props.movie.title}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                    <strong>Genres:</strong>{props.movie.genre_ids.map((genre, idx) => {
+                        <strong>Genres:</strong>{props.movie.genre_ids.map((genre, idx) => {
                             if (idx === 0) {
                                 return <span>{genre}</span>
                             } else {
@@ -52,10 +65,12 @@ export default (props: MovieCardProps) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary">
+                <Button size="small" color="primary" onClick={handleButtonDetailClick}>
                     Detail
                 </Button>
             </CardActions>
         </Card>
     );
 }
+
+export default withRouter(MovieCard)

@@ -1,9 +1,7 @@
 package mattje.alexandre.arctouch.config;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import lombok.Getter;
 
@@ -15,7 +13,7 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
 
 import mattje.alexandre.arctouch.common.Genre;
-import mattje.alexandre.arctouch.model.GenreModel;
+import mattje.alexandre.arctouch.model.GenreService;
 
 @Component
 @ConfigurationProperties("application")
@@ -32,7 +30,7 @@ public class AppProperties implements ApplicationListener<ApplicationReadyEvent>
 	private String movieApiKey;
 
 	@Autowired
-	private GenreModel genreModel;
+	private GenreService genreModel;
 
 	@Override
 	public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {

@@ -2,31 +2,31 @@ import React from "react";
 import { useState, useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
 import "./movies.css";
-import Movie from "../interfaces/Movie";
+import { MovieList } from "../interfaces/Movie";
 import MovieCard from "./components/MovieCard";
 import { Container, CircularProgress } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    fetchingMore: {
-      ...theme.typography.button,
-      backgroundColor: theme.palette.background.paper,
-      padding: theme.spacing(5),
-      width: "100%",
-    },
-    progress: {
-        margin: theme.spacing(2),
-    },    
-  }),
+    createStyles({
+        fetchingMore: {
+            ...theme.typography.button,
+            backgroundColor: theme.palette.background.paper,
+            padding: theme.spacing(5),
+            width: "100%",
+        },
+        progress: {
+            margin: theme.spacing(2),
+        },
+    }),
 );
 
 export default () => {
     const [page, setPage] = useState(1);
     const [query, setQuery] = useState("");
-    const [movies, setMovies] = useState(Array<Movie>());
+    const [movies, setMovies] = useState(Array<MovieList>());
     const [isFetching, setIsFetching] = useState(false);
-    const classes = useStyles();
+    const classes = useStyles({});
 
     useEffect(() => {
         fetchMoreListItems();
