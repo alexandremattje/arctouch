@@ -1,10 +1,10 @@
 package mattje.alexandre.arctouch.model;
 
-import java.io.IOException;
-import java.util.Map;
-
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
-
+import mattje.alexandre.arctouch.common.MovieResponse;
+import mattje.alexandre.arctouch.config.UrlResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
@@ -12,11 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import mattje.alexandre.arctouch.common.MovieResponse;
-import mattje.alexandre.arctouch.config.UrlResolver;
+import java.io.IOException;
+import java.util.Map;
 
 @Component
 @Slf4j

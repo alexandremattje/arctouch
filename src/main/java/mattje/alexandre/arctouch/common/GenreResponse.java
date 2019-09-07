@@ -1,10 +1,9 @@
 package mattje.alexandre.arctouch.common;
 
-import java.util.List;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
 
 public class GenreResponse {
 	@Getter

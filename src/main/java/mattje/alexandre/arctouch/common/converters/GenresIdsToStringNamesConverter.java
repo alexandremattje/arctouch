@@ -1,17 +1,13 @@
 package mattje.alexandre.arctouch.common.converters;
 
-import static mattje.alexandre.arctouch.config.AppProperties.genres;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.stereotype.Component;
-
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 import com.fasterxml.jackson.databind.util.Converter;
-
 import mattje.alexandre.arctouch.common.Genre;
+
+import java.util.List;
+
+import static mattje.alexandre.arctouch.config.AppProperties.genres;
 
 public class GenresIdsToStringNamesConverter implements Converter<List<Integer>, String> {
 

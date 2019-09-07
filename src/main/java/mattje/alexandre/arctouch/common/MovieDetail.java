@@ -1,18 +1,12 @@
 package mattje.alexandre.arctouch.common;
 
-import java.util.List;
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-
+import lombok.*;
 import mattje.alexandre.arctouch.common.converters.DateToStringConverter;
 import mattje.alexandre.arctouch.common.converters.GenresToStringNamesConverter;
+
+import java.util.List;
 
 @Builder
 @Data

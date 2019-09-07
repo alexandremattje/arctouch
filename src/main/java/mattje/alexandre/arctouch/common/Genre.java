@@ -1,14 +1,7 @@
 package mattje.alexandre.arctouch.common;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.ToString;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 @EqualsAndHashCode(of = "id")
 @ToString

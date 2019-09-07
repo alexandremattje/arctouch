@@ -1,26 +1,23 @@
 package mattje.alexandre.arctouch.model;
 
-import static mattje.alexandre.arctouch.config.AppProperties.genres;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
+import mattje.alexandre.arctouch.common.Genre;
+import mattje.alexandre.arctouch.common.GenreResponse;
+import mattje.alexandre.arctouch.config.AppProperties;
+import mattje.alexandre.arctouch.config.UrlResolver;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import lombok.extern.slf4j.Slf4j;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
-
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import mattje.alexandre.arctouch.common.Genre;
-import mattje.alexandre.arctouch.common.GenreResponse;
-import mattje.alexandre.arctouch.config.AppProperties;
-import mattje.alexandre.arctouch.config.UrlResolver;
+import static mattje.alexandre.arctouch.config.AppProperties.genres;
 
 @Component
 @Slf4j
