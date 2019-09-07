@@ -2,7 +2,7 @@
 ArcTouch Code Challenge
 
 ## Architeture
-For this challange I created a MVC kind application. Model and Controller was write in Java with Springboot and View was write using React. All external call to TMDb API was make from Models class. User interface was created on View and user´s interact was send to Controllers and Controllers call Models.
+For this challenge I created a MVC kind application. Model and Controller was write in Java with Springboot and View was write using React. All external call to TMDb API was make from Models class. User interface was created on View and user´s interact was send to Controllers and Controllers call Models.
 
 I assumpt the TMDb data have a low frequency changes and adopt a Spring Cache to improve performance. This cache was reset once a day with @Schedule and @CacheEvict anootations.
 
