@@ -18,6 +18,10 @@ Springboot was used to reduce Development time and to ease the development web a
 Project Lombok is a java library that automatically plugs into your editor and build tools, is very usefull and we don´t need write another getter or equals method again. Other annotations was used on project like: ```@Data, @Builder and @AllArgsConstructor```.
 #### Jodatime
 A libary to work with ```DateTime``` data type
+#### Jackson Json 
+[Link](https://github.com/FasterXML/jackson "Jackon Json github")
+
+I choose Jackson Json libary to work with json data loaded from TMDb and to delivery to application front-end. This libary provide some annotations that make convertions, read and write date from Json easier.
 
 ## Front-end
 ### React and Material-UI
@@ -32,4 +36,4 @@ It make use of State and other React resources easier to use.
 ```java -jar .\target\arctouch-0.0.1-SNAPSHOT.jar```
 
 ## Deploy
-Application was deployed in Heroku with this link. https://mattje-alexandre-arctouch.herokuapp.com/
+Application was deployed in Heroku with this [link](https://mattje-alexandre-arctouch.herokuapp.com/, "Herokuapp")
