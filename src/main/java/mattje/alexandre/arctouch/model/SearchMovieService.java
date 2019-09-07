@@ -6,6 +6,7 @@ import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -24,6 +25,7 @@ public class SearchMovieService {
 	@Autowired
 	private UrlResolver urlResolver;
 
+	@Cacheable("upcomingMovies")
 	public MovieResponse upcomingMovies(int page) {
 		Map<String, Object> urlParams = urlResolver.getDefaultApiKeyParams();
 		urlParams.put("page", page);
@@ -31,6 +33,7 @@ public class SearchMovieService {
 		return getMovieResponse(url, urlParams);
 	}
 
+	@Cacheable("search")
 	public MovieResponse search(String query, int page) {
 		Map<String, Object> urlParams = urlResolver.getDefaultApiKeyParams();
 		urlParams.put("page", page);
