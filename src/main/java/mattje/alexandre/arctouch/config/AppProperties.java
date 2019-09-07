@@ -3,12 +3,15 @@ package mattje.alexandre.arctouch.config;
 import lombok.Getter;
 import mattje.alexandre.arctouch.common.Genre;
 import mattje.alexandre.arctouch.model.GenreService;
+import mattje.alexandre.arctouch.model.SearchMovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.ApplicationListener;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,10 +33,14 @@ public class AppProperties implements ApplicationListener<ApplicationReadyEvent>
 	@Autowired
 	private GenreService genreModel;
 
+	@Autowired
+	private SearchMovieService searchMovieService;
+
 	@Override
 	public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
 		if (genres.isEmpty()) {
 			genres = genreModel.load();
 		}
 	}
+
 }

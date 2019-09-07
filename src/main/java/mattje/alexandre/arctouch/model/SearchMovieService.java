@@ -24,14 +24,6 @@ public class SearchMovieService {
 	@Autowired
 	private UrlResolver urlResolver;
 
-	@CacheEvict(value = "upcomingMovies", allEntries = true)
-	public void evictAllCacheValues() {}
-
-	@Scheduled(cron = "5 * * * * *")
-	public void resetCaches() {
-		evictAllCacheValues();
-	}
-
 	@Cacheable("upcomingMovies")
 	public MovieResponse upcomingMovies(int page) {
 		Map<String, Object> urlParams = urlResolver.getDefaultApiKeyParams();
