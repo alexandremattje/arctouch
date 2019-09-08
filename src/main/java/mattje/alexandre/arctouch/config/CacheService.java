@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class CacheService {
 
     @Autowired
-    CacheManager simpleCacheManager;
+    private CacheManager simpleCacheManager;
 
     public void evictAllCaches() {
         simpleCacheManager.getCacheNames().stream()

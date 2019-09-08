@@ -1,7 +1,6 @@
 package mattje.alexandre.arctouch.model;
 
-import java.util.List;
-
+import mattje.alexandre.arctouch.common.Genre;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import mattje.alexandre.arctouch.common.Genre;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

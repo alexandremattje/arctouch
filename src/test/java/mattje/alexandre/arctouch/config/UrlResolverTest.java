@@ -1,18 +1,13 @@
 package mattje.alexandre.arctouch.config;
 
-import java.util.Collections;
-import java.util.Map;
-
 import org.assertj.core.api.Assertions;
-import org.assertj.core.api.Condition;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import mattje.alexandre.arctouch.common.MovieResponse;
-import mattje.alexandre.arctouch.model.SearchMovieService;
+import java.util.Map;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

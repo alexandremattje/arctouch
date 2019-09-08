@@ -1,13 +1,9 @@
 package mattje.alexandre.arctouch.converters;
 
-import mattje.alexandre.arctouch.common.Genre;
 import mattje.alexandre.arctouch.common.converters.GenresIdsToStringNamesConverter;
-import mattje.alexandre.arctouch.model.GenreService;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 

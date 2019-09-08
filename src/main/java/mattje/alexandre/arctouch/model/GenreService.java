@@ -26,9 +26,6 @@ public class GenreService {
 	@Autowired
 	private UrlResolver urlResolver;
 
-	@Autowired
-	private AppProperties appProperties;
-
 	public List<Genre> load() {
 		Map<String, Object> urlParams = urlResolver.getDefaultApiKeyParams();
 		String url = urlResolver.resolveUrlWithApiKey("/genre/movie/list", urlParams);
