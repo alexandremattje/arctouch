@@ -4,6 +4,8 @@ ArcTouch Code Challenge
 ## Architecture
 For this challenge I created a MVC kind application. Model and Controller was write in Java with Springboot and View was write using React. All external call to TMDb API was make from Models class. User interface was created on View and user´s interact was send to Controllers and Controllers call Models.
 
+I created one service for each group for request, in that way I can scale app creating a micro service for each service.
+
 I assumpt the TMDb data have a low frequency changes and adopt a Spring Cache to improve performance. This cache was reset once a day with ```@Schedule``` annotation and ```CacheManager```.
 
 For back-end test I used ```Assertions``` to validate test, because, for me, is more clear to read asserts.
@@ -28,6 +30,8 @@ I choose Jackson Json library to work with json data loaded from TMDb and to del
 ## Front-end
 ### React and Material-UI
 I choose these because both are frameworks that improve speed and are useful to create web pages easier.
+### Typescript
+Typescript bring typing to javascript, using typescript coding became easier and less susceptible to write some error.
 ### Hooks
 It make use of State and other React resources easier to use.
 
